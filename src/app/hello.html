@@ -15,3 +15,13 @@
 
 <p>{{ $ctrl.somar }}</p>
 <p>{{ $ctrl.subtrair }}</p>
+
+<ul>
+    <li data-ng-repeat="item in $ctrl.list">
+        <p>{{item.name}}</p>
+        <p data-ng-bind="item.lastname"></p>
+    </li>    
+</ul>    
+
+
+<app-directive name="Rafael" lastname="Barros"></app-directive>
