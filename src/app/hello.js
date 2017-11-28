@@ -2,6 +2,43 @@ angular
   .module('app')
   .component('app', {
     templateUrl: 'app/hello.html',
+    controller: function (ContactFactory) {
+      var vm = this;
+
+      vm.hero = 'New Contact!';
+      vm.form = {
+        name: '',
+        telephone: '',
+        email: ''
+      };
+
+      vm.add = add;
+
+      function add(contact) {
+        if(!contact){
+          alert('You must need a valid contact');
+          return;
+        }
+
+        ContactFactory.add(contact);
+
+        vm.form = {
+          name: '',
+          telephone: '',
+          email: ''
+        };
+
+      }
+
+    }
+  })
+
+
+/*
+angular
+  .module('app')
+  .component('app', {
+    templateUrl: 'app/hello.html',
     controller: function (MathFactory, MathService) {
       var vm = this;
 
@@ -39,3 +76,5 @@ angular
       }
     }
   });
+
+ */ 
